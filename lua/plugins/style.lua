@@ -1,8 +1,10 @@
--- return {
---   "folke/tokyonight.nvim",
---   lazy = true,
---   opts = { style = "night" },
--- }
+
+vim.opt.termguicolors = true
+return {
+  "folke/tokyonight.nvim",
+  lazy = true,
+  opts = { style = "night" },
+}
 --
 --
 -- return {
@@ -17,14 +19,14 @@
 --     },
 --   },
 -- }
-vim.opt.termguicolors = true
-return {
-  { "savq/melange-nvim" },
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "melange",
-    },
-  },
-}
+
+
+-- return {
+--   { "savq/melange-nvim" },
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "melange",
+--     },
+--   },
+-- }
