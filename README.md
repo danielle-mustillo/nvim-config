@@ -20,3 +20,7 @@ And follow instructions there.
 ```
 <leader>uF
 ```
+
+### Keymaps
+
+(keymapppings for the editor)[https://www.lazyvim.org/keymaps]
