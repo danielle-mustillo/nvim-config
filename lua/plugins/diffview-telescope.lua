@@ -1,5 +1,3 @@
--- require("telescope").load_extension("diff")
-
 vim.keymap.set("n", "<leader>mC", function()
   require("telescope").extensions.diff.diff_files({ hidden = true })
 end, { desc = "Compare 2 files" })
