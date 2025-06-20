@@ -1,33 +1,33 @@
 
 vim.opt.termguicolors = true
+--return {
+--  "folke/tokyonight.nvim",
+--  lazy = true,
+--  --opts = { style = "moon" },
+--  opts = { style = "night" },
+--}
+--
+
 return {
-  "folke/tokyonight.nvim",
-  lazy = true,
-  --opts = { style = "moon" },
-  opts = { style = "night" },
+  -- add gruvbox
+  { "ellisonleao/gruvbox.nvim" },
+
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
 }
---
---
--- return {
---   -- add gruvbox
---   { "ellisonleao/gruvbox.nvim" },
---
---   -- Configure LazyVim to load gruvbox
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "gruvbox",
---     },
---   },
--- }
 
 
--- return {
---   { "savq/melange-nvim" },
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "melange",
---     },
---   },
--- }
+--return {
+--  { "savq/melange-nvim" },
+--  {
+--    "LazyVim/LazyVim",
+--    opts = {
+--      colorscheme = "melange",
+--    },
+--  },
+--}
