@@ -21,6 +21,18 @@ And follow instructions there.
 <leader>uF
 ```
 
+### Install an LSP
+We can use the mason-lsp.nvim plugin to install an LSP client on nvim. You can type:
+
+```
+:help mason-lspconfig.nvim
+```
+
+They tell you to go to a buffer you want to install an LSP for and type:
+
+```
+:LspInstall
+```
 ### Keymaps
 
 (keymapppings for the editor)[https://www.lazyvim.org/keymaps]
