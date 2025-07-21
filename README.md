@@ -35,6 +35,8 @@ They tell you to go to a buffer you want to install an LSP for and type:
 ```
 
 You'll need to add it to the list of mason required packages in the mason.lua file (Type ":Mason" to get the list already installed)
+
+
 ### Keymaps
 
 (keymapppings for the editor)[https://www.lazyvim.org/keymaps]
