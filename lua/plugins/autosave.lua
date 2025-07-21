@@ -1,10 +1,15 @@
-return {}
---require("lazy").setup({
---    {
---        "brianhuster/autosave.nvim",
---        event="InsertEnter",
---        opts = {} -- Configuration here
---    },
---})
---
---return {}
+return {
+  "Pocco81/auto-save.nvim",
+  lazy = false,
+  opts = {
+    debounce_delay = 500,
+    execution_message = {
+      message = function()
+        return ""
+      end,
+    },
+  ,
+  keys = {
+    { "<leader>mv", "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
+  },
+}
