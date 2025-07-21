@@ -8,7 +8,7 @@ return {
         return ""
       end,
     },
-  ,
+  },
   keys = {
     { "<leader>mv", "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
   },
