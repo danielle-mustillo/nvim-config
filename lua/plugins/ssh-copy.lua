@@ -1,3 +1,5 @@
+-- came from https://gronskiy.com/posts/2023-03-26-copy-via-vim-tmux-ssh/
+
 return {
   "ojroques/nvim-osc52",
   config = function()
