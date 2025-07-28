@@ -40,6 +40,7 @@ return
         "sqlfluff",
         "stylua",
         "taplo",
+        "terraform-ls",
         "vtsls",
         "yaml-language-server"
       },
