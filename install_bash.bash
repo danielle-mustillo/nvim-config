@@ -16,6 +16,8 @@ sudo apt install imagemagick texlive-latex-base texlive-fonts-recommended -y
 #sudo apt-get install texlive-fonts-extra -y # This is probably overkill, here for refernce only
 
 sudo apt install python3-pynvim python3-pip python3-venv -y
+sudo apt install sqlite3 -y
+
 
 # Fzf
 sudo apt install fzf -y
