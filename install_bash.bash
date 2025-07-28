@@ -1,5 +1,12 @@
 set -e
 
+# NVIM and Direct Dependencies
+sudo snap install nvim --classic
+#npm install -g neovim
+sudo apt install jq ripgrep fd-find -y
+#ln -s $(which fdfind) ~/.local/bin/fd
+
+
 sudo apt install luarocks lua5.4 liblua5.4-dev -y
 sudo apt install golang -y  # this is because executing :checkhealth doesn't work with snap (but it probably should....)
 #sudo snap install go --classic
@@ -18,11 +25,6 @@ sudo apt install fzf -y
 sudo snap install node --classic
 
 
-# NVIM and Direct Dependencies
-sudo snap install nvim --classic
-#npm install -g neovim
-sudo apt install jq ripgrep fd-find -y
-#ln -s $(which fdfind) ~/.local/bin/fd
 
 
 # LazyGit 
