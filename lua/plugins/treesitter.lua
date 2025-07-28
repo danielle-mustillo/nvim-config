@@ -4,6 +4,9 @@ return {
   opts = {
     ensure_installed = {
       "bash",
+      "gitignore",
+      "go",
+      "gotmpl",
       "html",
       "javascript",
       "json",
