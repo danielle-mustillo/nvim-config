@@ -74,3 +74,10 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+
+--vim.g.lazyvim_check_order = false
+
+
+--vim.uv.os_setenv("JAVA_HOME", "/usr/lib/jvm/java-21-openjdk-amd64")
+vim.uv.os_setenv("JAVA_HOME", "/usr/lib/jvm/temurin-21-jdk-amd64")

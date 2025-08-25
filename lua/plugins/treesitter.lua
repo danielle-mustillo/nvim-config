@@ -11,6 +11,7 @@ return {
       "go",
       "gotmpl",
       "html",
+      "java",
       "javascript",
       "json",
       "lua",
