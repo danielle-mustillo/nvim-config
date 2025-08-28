@@ -15,7 +15,7 @@ sudo apt install openjdk-21-jdk-headless -y # this is because we don't always ha
 sudo apt install imagemagick texlive-latex-base texlive-fonts-recommended -y
 #sudo apt-get install texlive-fonts-extra -y # This is probably overkill, here for refernce only
 
-sudo apt install python3-pynvim python3-pip python3-venv -y
+sudo apt install python3-pynvim python3-pip python3-venv python-is-python3 -y
 sudo apt install sqlite3 -y
 
 
@@ -58,5 +58,13 @@ touch $HOME/.config/lazygit/config.yml
 
 
 
+## TODO this is stuff for kitty install, might not be needed though....
+# https://gist.github.com/VPraharsha03/dce1692afccdb2d220fffff3ad8448f0 
+#
+#
+# sudo apt install mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev
+# sudo apt install kitty 
+# export KITTY_DISABLE_WAYLAND=1
+#
 # Cleanup
 sudo apt autoremove -y
