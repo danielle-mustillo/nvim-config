@@ -81,3 +81,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 --vim.uv.os_setenv("JAVA_HOME", "/usr/lib/jvm/java-21-openjdk-amd64")
 vim.uv.os_setenv("JAVA_HOME", "/usr/lib/jvm/temurin-21-jdk-amd64")
+
+-- disable animations since they're slow
+vim.g.snacks_animate = false
+
