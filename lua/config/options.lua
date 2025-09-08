@@ -85,3 +85,5 @@ vim.uv.os_setenv("JAVA_HOME", "/usr/lib/jvm/temurin-21-jdk-amd64")
 -- disable animations since they're slow
 vim.g.snacks_animate = false
 
+-- Show an indent guide at 180 characters 
+vim.opt.colorcolumn = "180"   -- show a guide

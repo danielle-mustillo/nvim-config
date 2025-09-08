@@ -1,5 +1,7 @@
 -- Copied from https://github.com/LazyVim/LazyVim/discussions/2992
 -- merged into this was this: https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/ftplugin/java.lua#L1-L149
+--
+-- The vscode use of these options might be a useful reference (see java.completion stuff)  https://github.com/redhat-developer/vscode-java/blob/main/package.json
 return {
   "mfussenegger/nvim-jdtls",
   opts = {
@@ -18,10 +20,17 @@ return {
               "org.hamcrest.MatcherAssert.assertThat",
               "org.hamcrest.Matchers.*",
               "org.hamcrest.CoreMatchers.*",
+              --"java.util.Objects.requireNonNull",
+              --"java.util.Objects.requireNonNullElse",
+              --"org.junit.Assert.*",
+              --"org.junit.Assume.*",
               "org.junit.jupiter.api.Assertions.*",
-              "java.util.Objects.requireNonNull",
-              "java.util.Objects.requireNonNullElse",
+              "org.junit.jupiter.api.Assumptions.*",
+              "org.junit.jupiter.api.DynamicContainer.*",
+              "org.junit.jupiter.api.DynamicTest.*",
               "org.mockito.Mockito.*",
+              "org.mockito.ArgumentMatchers.*",
+              "org.mockito.Answers.*",
             },
             filteredTypes = {
               "com.sun.*",
@@ -30,16 +39,16 @@ return {
               "jdk.*",
               "sun.*",
             },
-            -- chatgpt found this for the static imports section (and emall other imports)
+            -- chatgpt found this for the static imports section (and all other imports)
             -- https://github.com/redhat-developer/vscode-java/pull/2685/files
             importOrder = {
-              "com",
-              "lombok",
-              "org",
+              "",
+              --"com",
+              --"lombok",
+              --"org",
               "java",
               "javax",
-              "",
-              "#"
+              "#",
             },
           },
           sources = {
@@ -60,13 +69,14 @@ return {
               },
             },
           },
-          --format = {
-          --  enabled = true,
-          --  settings = {
-          --    url = vim.fn.expand("~/Workspace/eclipse-java-google-style.xml"),
-          --    profile = "GoogleStyle",
-          --  },
-          --},
+          format = {
+            enabled = true,
+            settings = {
+              --url = vim.fn.expand("~/Workspace/eclipse-java-google-style.xml"),
+              url = "file://" .. vim.fn.stdpath("config") .. "/formatters/java.xml",
+              profile = "MyProfile",
+            },
+          },
           inlayHints = {
             parameterNames = {
               enabled = "all",
