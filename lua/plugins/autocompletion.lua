@@ -1,15 +1,15 @@
 return {
-  {
-    "milanglacier/minuet-ai.nvim",
-    config = function()
-      require("minuet").setup({
-        -- Your configuration options here
-      })
-    end,
-  },
-  { "nvim-lua/plenary.nvim" },
-  -- optional, if you are using virtual-text frontend, blink is not required.
-  { "Saghen/blink.cmp" },
+--  {
+--    "milanglacier/minuet-ai.nvim",
+--    config = function()
+--      require("minuet").setup({
+--        -- Your configuration options here
+--      })
+--    end,
+--  },
+--  { "nvim-lua/plenary.nvim" },
+--  -- optional, if you are using virtual-text frontend, blink is not required.
+--  { "Saghen/blink.cmp" },
   { 
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -18,7 +18,7 @@ return {
     },
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
-      table.insert(opts.sources, { name = "minuet" })
+      --table.insert(opts.sources, { name = "minuet" })
       --opts.performance.fetching_timeout = 2000
     end,
   },
