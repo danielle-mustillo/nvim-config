@@ -55,7 +55,7 @@ rm lazygit.tar.gz
 echo "lazygit v${LAZYGIT_VERSION} installed successfully!"
 
 touch $HOME/.config/lazygit/config.yml
-
+mkdir -p ~/test/
 
 
 ## TODO this is stuff for kitty install, might not be needed though....

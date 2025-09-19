@@ -19,6 +19,7 @@ return
         "ansible-language-server",
         "ansible-lint",
         "bash-language-server",
+        "bash-debug-adapter",
         "docker-compose-language-service",
         "dockerfile-language-server",
         "flake8",

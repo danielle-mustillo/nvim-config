@@ -21,6 +21,16 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
   },
+  -- For plugin development, you can clone the forked repo to the test folder  (ie. ~/test/someplugin)
+  -- and put the definition in there. You'll also need to put dev=true in the plugin itself 
+  -- eg. 
+  -- return {
+  --   "jay-babu/mason-nvim-dap.nvim",
+  --   dev = true,
+  -- } 
+  dev = {
+    path = "~/test",
+  },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
@@ -49,4 +59,3 @@ require("lazy").setup({
   },
 })
 
--- vim.cmd.colorscheme("melange")
