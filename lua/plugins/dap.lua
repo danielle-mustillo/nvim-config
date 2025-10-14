@@ -20,7 +20,7 @@ return {
         config.configurations = {{
           type = "bash",
           request = "launch",
-          name = "Bash: Launch file (danielle)",
+          name = "Bash: Launch file (nvim config)",
           program = "${file}",
           cwd = "${fileDirname}",
           pathBashdb = vim.fn.expand('$MASON/opt/bashdb') .. "/bashdb",
