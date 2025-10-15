@@ -2,15 +2,15 @@
 --
 return {
     "Ramilito/kubectl.nvim",
-    opts = {},
     version = "2.*",
     dependencies = "saghen/blink.download",
     cmd = { "Kubectl", "Kubectx", "Kubens" },
-    --config = function()
-    --  require("kubectl").setup()
-    --end,
+    --opts = {},
+    config = function ()
+      require("kubectl").setup()
+    end,
     keys = {
-      { "<leader>k", '<cmd>lua require("kubectl").toggle()<cr>', desc = "Start kubernetes" },
+      { "<leader>k", '<cmd>lua require("kubectl").toggle({ tab = false })<cr>', desc = "Start kubernetes" },
       --{ "<C-k>", "<Plug>(kubectl.kill)", ft = "k8s_*" },
       { "7", "<Plug>(kubectl.view_nodes)", ft = "k8s_*" },
       { "8", "<Plug>(kubectl.view_overview)", ft = "k8s_*" },

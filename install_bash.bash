@@ -1,5 +1,8 @@
 set -e
 
+# Man Pages and Suggestions for Bash
+sudo unminimize
+
 # NVIM and Direct Dependencies
 sudo snap install nvim --classic
 #npm install -g neovim

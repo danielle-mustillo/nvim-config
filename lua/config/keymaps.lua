@@ -8,15 +8,15 @@ wk.add({
   { "<leader>mj", group = "Java Mappings" },
 })
 
-
+-- 
 -- Diff files
-vim.keymap.set("n", "<leader>mC", function()
-  require("telescope").extensions.diff.diff_files({ hidden = true })
-end, { desc = "Compare 2 files" })
-
-vim.keymap.set("n", "<leader>mc", function()
-  require("telescope").extensions.diff.diff_current({ hidden = true })
-end, { desc = "Compare file with current" })
+--vim.keymap.set("n", "<leader>mC", function()
+--  require("telescope").extensions.diff.diff_files({ hidden = true })
+--end, { desc = "Compare 2 files" })
+--
+--vim.keymap.set("n", "<leader>mc", function()
+--  require("telescope").extensions.diff.diff_current({ hidden = true })
+--end, { desc = "Compare file with current" })
 
 -- Refactor (java)
 vim.keymap.set("n", "<leader>mjv", function()
