@@ -1,101 +1,108 @@
 return {
   --  Can be extended further with this: https://github.com/linkarzu/dotfiles-latest/blob/main/neovim/neobean/lua/plugins/blink-cmp.lua
   --  That is where the inspiration for this code came from
-   {
-     "saghen/blink.cmp",
-     dependencies = {
-       "moyiz/blink-emoji.nvim",
-     },
-     opts = function(_, opts)
-       opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
-         default = {
-           "emoji",
-         },
-         providers = {
-           emoji = {
-             module = "blink-emoji",
-             name = "Emoji",
-             score_offset = 15, -- Tune by preference
-             opts = {
-               insert = true, -- Insert emoji (default) or complete its name
-               ---@type string|table|fun():table
-               trigger = function()
-                 return { ":" }
-               end,
-             },
-             --should_show_items = true,
-             --should_show_items = function()
-             --  return vim.tbl_contains(
-             --    -- Enable emoji completion only for git commits and markdown.
-             --    -- By default, enabled for all file-types.
-             --    { "gitcommit", "markdown" },
-             --    vim.o.filetype
-             --  )
-             --end,
-           },
-         },
-       })
-     end,
-  }
-  --   --{
-  --   --  "hrsh7th/nvim-cmp",
-  --   --  dependencies = {
-  --   --    "hrsh7th/cmp-emoji",
-  --   --  "milanglacier/minuet-ai.nvim",
-  --   --  },
-  --   --  opts = function(_, opts)
-  --   --    table.insert(opts.sources, { name = "emoji" })
-  --   --    --table.insert(opts.sources, { name = "minuet" })
-  --   --    --opts.performance.fetching_timeout = 2000
-  --   --  end,
-  --   --},
-  -- },
-  --{
-  --  "allaman/emoji.nvim",
-  --  --version = "1.0.0", -- optionally pin to a tag
-  --  ft = "markdown", -- adjust to your needs
-  --  dependencies = {
-  --    -- util for handling paths
-  --    "nvim-lua/plenary.nvim",
-  --    -- optional for fzf-lua integration via vim.ui.select
-  --    "ibhagwan/fzf-lua",
-  --  },
-  --  opts = {
-  --    -- default is false, also needed for blink.cmp integration!
-  --    enable_cmp_integration = true,
-  --    -- optional if your plugin installation directory
-  --    -- is not vim.fn.stdpath("data") .. "/lazy/
-  --    --plugin_path = vim.fn.expand("$HOME/plugins/"),
-  --  },
-  --  config = function(_, opts)
-  --    require("emoji").setup(opts)
-  --    -- optional for telescope integration
-  --    --local ts = require("telescope").load_extension("emoji")
-  --    --vim.keymap.set("n", "<leader>se", ts.emoji, { desc = "[S]earch [E]moji" })
-  --  end,
-  --},
-  --{
-  --  "saghen/blink.cmp",
-  --  --optional = true,
-  --  dependencies = { "allaman/emoji.nvim", "saghen/blink.compat" },
-  --  opts = {
-  --    sources = {
-  --      default = { "emoji" },
-  --      providers = {
-  --        emoji = {
-  --          name = "emoji",
-  --          module = "blink.compat.source",
-  --          -- overwrite kind of suggestion
-  --          --transform_items = function(ctx, items)
-  --          --  local kind = require("blink.cmp.types").CompletionItemKind.Text
-  --          --  for i = 1, #items do
-  --          --    items[i].kind = kind
-  --          --  end
-  --          --  return items
-  --          --end,
-  --        },
-  --      },
-  --    },
-  --  },
-  --},
+  {
+    "saghen/blink.cmp",
+    enabled = true,
+    dependencies = {
+      "moyiz/blink-emoji.nvim",
+    },
+    opts = function(_, opts)
+      opts.fuzzy = vim.tbl_deep_extend("force", opts.fuzzy or {}, {
+        sorts = {
+          "exact",
+          -- defaults
+          "score",
+          "sort_text",
+          "label",
+        },
+      })
+      opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
+        --opts.sources = {
+        default = {
+          'lazydev',
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
+          "emoji",
+        },
+        providers = {
+          -- -- the following was taken from https://cmp.saghen.dev/configuration/reference#fuzzy
+          lsp = {
+            name = "LSP",
+            module = "blink.cmp.sources.lsp",
+            -- You may enable the buffer source, when LSP is available, by setting this to `{}`
+            -- You may want to set the score_offset of the buffer source to a lower value, such as -5 in this case
+            --fallbacks = { 'buffer' },
+            fallbacks = {},
+            opts = { tailwind_color_icon = "██" },
+
+            --- These properties apply to !!ALL sources!!
+            --- NOTE: All of these options may be functions to get dynamic behavior
+            --- See the type definitions for more information
+            --enabled = true, -- Whether or not to enable the provider
+            --async = false, -- Whether we should show the completions before this provider returns, without waiting for it
+            --timeout_ms = 2000, -- How long to wait for the provider to return before showing completions and treating it as asynchronous
+            --transform_items = nil, -- Function to transform the items before they're returned
+            --should_show_items = true, -- Whether or not to show the items
+            --max_items = nil, -- Maximum number of items to display in the menu
+            --min_keyword_length = 0, -- Minimum number of characters in the keyword to trigger the provider
+            ---- If this provider returns 0 items, it will fallback to these providers.
+            ---- If multiple providers fallback to the same provider, all of the providers must return 0 items for it to fallback
+            --score_offset = 0, -- Boost/penalize the score of the items
+            --override = nil, -- Override the source's functions
+          },
+          path = {
+            module = "blink.cmp.sources.path",
+            score_offset = 3,
+            fallbacks = {},
+            opts = {
+              trailing_slash = true,
+              label_trailing_slash = true,
+              -- Taken from https://cmp.saghen.dev/recipes#path-completion-from-cwd-instead-of-current-buffer-s-directory
+              --get_cwd = function(_)
+              --  return vim.fn.getcwd()
+              --end,
+              get_cwd = function(context)
+                return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
+              end,
+              show_hidden_files_by_default = false,
+              -- Treat `/path` as starting from the current working directory (cwd) instead of the root of your filesystem
+              ignore_root_slash = false,
+            },
+          },
+          buffer = {
+            name = "Buffer",
+            enabled = true,
+            max_items = 10,
+            module = "blink.cmp.sources.buffer",
+            min_keyword_length = 2,
+            score_offset = -5, -- the higher the number, the higher the priority
+          },
+          emoji = {
+            module = "blink-emoji",
+            name = "Emoji",
+            score_offset = 0, -- Tune by preference
+            opts = {
+              insert = true, -- Insert emoji (default) or complete its name
+              ---@type string|table|fun():table
+              trigger = function()
+                return { ":" }
+              end,
+            },
+            --should_show_items = true,
+            --should_show_items = function()
+            --  return vim.tbl_contains(
+            --    -- Enable emoji completion only for git commits and markdown.
+            --    -- By default, enabled for all file-types.
+            --    { "gitcommit", "markdown" },
+            --    vim.o.filetype
+            --  )
+            --end,
+          },
+        },
+      })
+    end,
+  },
 }
