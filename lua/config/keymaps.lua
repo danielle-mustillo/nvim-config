@@ -4,8 +4,8 @@
 
 local wk = require("which-key")
 wk.add({
-  { "<leader>m", group = "My Mappings" }, 
-  { "<leader>mj", group = "Java Mappings" },
+  { "<leader>m", group = "mymappings" },
+  { "<leader>mj", group = "java Mappings" },
 })
 
 -- 
