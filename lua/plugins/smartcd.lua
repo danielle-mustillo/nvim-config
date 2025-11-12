@@ -1,3 +1,7 @@
+-- This plugin is will change the CWD upon entering a file 
+-- or folder in nvim. It changes to a reasonable location to
+-- as a working directory (eg. where .git folder is, .gitignore, etc)
+
 return  {
   "https://gitlab.com/trxnvim/kharon.nvim.git",
   opts = {},
