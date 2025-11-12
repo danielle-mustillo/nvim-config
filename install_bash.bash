@@ -35,7 +35,8 @@ sudo apt install fzf -y
 # Node & NPM
 sudo snap install node --classic
 
-
+sudo snap install yazi --classic
+sudo ln -s yazi.ya ya
 
 
 # LazyGit 
