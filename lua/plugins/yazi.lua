@@ -18,14 +18,14 @@ return {
       group = "Yazi",
     },
     {
-      "<leader>myf",
+      "<leader>fd",
       mode = { "n", "v" },
       "<cmd>Yazi<cr>",
       desc = "Open File",
     },
     {
       -- Open in the current working directory
-      "<leader>myF",
+      "<leader>fD",
       "<cmd>Yazi cwd<cr>",
       desc = "Open Current Working Directory",
     },
