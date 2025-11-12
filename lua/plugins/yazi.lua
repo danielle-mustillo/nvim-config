@@ -1,3 +1,9 @@
+
+local wk = require("which-key")
+wk.add({
+  { "<leader>my", group = "yazi" },
+})
+
 return {
   "mikavilpas/yazi.nvim",
   version = "*", -- use the latest stable version
@@ -7,22 +13,26 @@ return {
   },
   keys = {
     -- 👇 in this section, choose your own keymappings!
+    --
+    { "<leader>my",
+      group = "Yazi",
+    },
     {
-      "<leader>-",
+      "<leader>myf",
       mode = { "n", "v" },
       "<cmd>Yazi<cr>",
-      desc = "Open yazi at the current file",
+      desc = "Open File",
     },
     {
       -- Open in the current working directory
-      "<leader>cw",
+      "<leader>myF",
       "<cmd>Yazi cwd<cr>",
-      desc = "Open the file manager in nvim's working directory",
+      desc = "Open Current Working Directory",
     },
     {
-      "<c-up>",
+      "<leader>myt",
       "<cmd>Yazi toggle<cr>",
-      desc = "Resume the last yazi session",
+      desc = "Resume",
     },
   },
   ---@type YaziConfig | {}
