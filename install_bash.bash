@@ -1,7 +1,12 @@
 set -e
 
 # Man Pages and Suggestions for Bash
-sudo unminimize
+if command -v "unminimize" &>/dev/null; then
+	echo "unminimizing the OS install to get man pages back..."
+	sudo unminimize
+else
+	echo "uminimize command does not exits, skipping..."
+fi
 
 # NVIM and Direct Dependencies
 sudo snap install nvim --classic
