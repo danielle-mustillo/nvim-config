@@ -35,8 +35,9 @@ sudo apt install fzf -y
 # Node & NPM
 sudo snap install node --classic
 
-sudo snap install yazi --classic
-sudo ln -s yazi.ya ya
+# File Browser
+sudo snap install yazi --classic --edge
+sudo ln -s /snap/bin/yazi.ya /snap/bin/ya
 
 
 # LazyGit 
@@ -64,8 +65,9 @@ rm lazygit.tar.gz
 
 echo "lazygit v${LAZYGIT_VERSION} installed successfully!"
 
+mkdir -p $HOME/.config/lazygit/
 touch $HOME/.config/lazygit/config.yml
-mkdir -p ~/test/
+mkdir -p $HOME/test/
 
 
 ## TODO this is stuff for kitty install, might not be needed though....
