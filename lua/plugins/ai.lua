@@ -7,7 +7,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
-      strategies = {
+      interactions = {
         -- Change the default chat adapter and model
         chat = {
           adapter = "ollama",
