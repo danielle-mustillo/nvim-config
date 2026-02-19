@@ -9,7 +9,34 @@ else
 fi
 
 # NVIM and Direct Dependencies
-sudo snap install nvim --classic
+#sudo apt install flatpak
+#flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+#flatpak install flathub io.neovim.nvim
+#sudo snap install nvim --classic
+
+arch=$(uname -m)
+
+if [[ "$arch" == arm* ]] || [[ "$arch" == aarch* ]]; then
+    echo "This is an ARM architecture."
+
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage
+    chmod u+x nvim-linux-arm64.appimage
+    ./nvim-linux-arm64.appimage --version
+
+    sudo mkdir -p /opt/nvim
+    sudo mv nvim-linux-arm64.appimage /opt/nvim/nvim
+else
+    echo "This is not an ARM architecture (likely x86)."
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+    chmod u+x nvim-linux-x86_64.appimage
+    ./nvim-linux-x86_64.appimage --version
+
+    sudo mkdir -p /opt/nvim
+    sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
+fi
+export PATH="$PATH:/opt/nvim/"
+echo 'export PATH="$PATH:/opt/nvim/"' >> ~/.bashrc
+
 #npm install -g neovim
 sudo apt install jq ripgrep fd-find -y
 #ln -s $(which fdfind) ~/.local/bin/fd
@@ -33,11 +60,22 @@ sudo apt install fzf -y
 #echo "source /usr/share/doc/fzf/examples/key-bindings.bash" >> $HOME/.bashrc
 
 # Node & NPM
-sudo snap install node --classic
+# -----
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-# File Browser
-sudo snap install yazi --classic --edge
-sudo ln -s /snap/bin/yazi.ya /snap/bin/ya
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 24
+
+# Verify the Node.js version:
+node -v # Should print "v24.13.1".
+
+# Verify npm version:
+npm -v # Should print "11.8.0".
+# ----------
 
 
 # LazyGit 
