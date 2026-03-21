@@ -43,7 +43,8 @@ return
         "taplo",
         "terraform-ls",
         "vtsls",
-        "yaml-language-server"
+        "yaml-language-server",
+        "zk"
       },
       ui = {
         icons = {
