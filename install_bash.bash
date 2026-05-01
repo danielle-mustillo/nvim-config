@@ -56,8 +56,10 @@ sudo apt install sqlite3 -y
 
 
 # Fzf
-sudo apt install fzf -y
+#sudo apt install fzf -y
 #echo "source /usr/share/doc/fzf/examples/key-bindings.bash" >> $HOME/.bashrc
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # Node & NPM
 # -----
@@ -107,6 +109,14 @@ mkdir -p $HOME/.config/lazygit/
 touch $HOME/.config/lazygit/config.yml
 mkdir -p $HOME/test/
 
+# rust, cargo, tree-sitter, etc
+sudo apt install rustup -y
+rustup default stable
+sudo apt install clang -y
+cargo install tree-sitter-cli
+
+export PATH="$PATH:$HOME/.cargo/bin"
+echo 'export PATH="$PATH:/.cargo/bin"' >> ~/.bashrc
 
 ## TODO this is stuff for kitty install, might not be needed though....
 # https://gist.github.com/VPraharsha03/dce1692afccdb2d220fffff3ad8448f0 
