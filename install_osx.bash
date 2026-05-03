@@ -8,3 +8,5 @@ brew install fd
 brew install --cask ghostty
 
 brew install python
+brew install go
+brew install node
