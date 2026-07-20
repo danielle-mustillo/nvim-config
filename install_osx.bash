@@ -10,3 +10,14 @@ brew install --cask ghostty
 brew install python
 brew install go
 brew install node
+brew install java
+
+# Extra stuff
+brew install mvn
+brew install codex
+brew install docker
+brew install colima
+colima start
+brew install docker-compose
+
+
