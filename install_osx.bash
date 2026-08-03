@@ -32,4 +32,6 @@ brew install awscli
 brew install helm
 brew install kind
 
-
+brew install --cask slack
+brew install --cask spotify
+brew install --cask google-drive
