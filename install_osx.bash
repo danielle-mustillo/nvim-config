@@ -17,7 +17,19 @@ brew install mvn
 brew install codex
 brew install docker
 brew install colima
-colima start
+colima start --cpu 4 --memory 8
 brew install docker-compose
+
+
+# Work stuff
+brew install gh
+brew install --cask codex
+brew install --cask claude-code
+brew install --cask gcloud-cli
+brew install --cask insomnia
+brew install --cask cursor
+brew install awscli
+brew install helm
+brew install kind
 
 
