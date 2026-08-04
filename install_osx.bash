@@ -30,12 +30,14 @@ brew install --cask insomnia
 brew install --cask cursor
 brew install awscli
 brew install helm
+brew install kubectl 
 brew install kind
 
 brew install --cask slack
 brew install --cask spotify
 brew install --cask google-drive
 brew install docker-buildx
+brew install yq
 
 
 # Nice things (oh-my-zsh)
@@ -43,13 +45,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 brew install starship
-# add the following to .zshrc
-# plugins=( [plugins...] zsh-syntax-highlighting)
-# plugins=( other plugins... zsh-autosuggestions)
+# add the following to .zshrc (exactly)
 #
-# and this line exactly too:
+# plugins=(git fzf kubectl zsh-syntax-highlighting zsh-autosuggestions )
 #
 # eval "$(starship init zsh)"
+#
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 git config --global github.user danielle-mustillo
 git config --global user.name Danielle Mustillo
 git config --global user.email danielle.mustillo@solo.io
