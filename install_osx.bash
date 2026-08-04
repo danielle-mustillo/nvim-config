@@ -23,22 +23,26 @@ brew install docker-compose
 
 # Work stuff
 brew install gh
+brew install --cask git-credential-manager
+
 brew install --cask codex
 brew install --cask claude-code
-brew install --cask gcloud-cli
-brew install --cask insomnia
 brew install --cask cursor
+
+brew install --cask insomnia
+
+brew install --cask gcloud-cli
 brew install awscli
+
 brew install helm
 brew install kubectl 
 brew install kind
+brew install docker-buildx
 
 brew install --cask slack
 brew install --cask spotify
 brew install --cask google-drive
-brew install docker-buildx
 brew install yq
-
 
 # Nice things (oh-my-zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
