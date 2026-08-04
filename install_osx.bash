@@ -35,3 +35,24 @@ brew install kind
 brew install --cask slack
 brew install --cask spotify
 brew install --cask google-drive
+brew install docker-buildx
+
+
+# Nice things (oh-my-zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+brew install starship
+# add the following to .zshrc
+# plugins=( [plugins...] zsh-syntax-highlighting)
+# plugins=( other plugins... zsh-autosuggestions)
+#
+# and this line exactly too:
+#
+# eval "$(starship init zsh)"
+git config --global github.user danielle-mustillo
+git config --global user.name Danielle Mustillo
+git config --global user.email danielle.mustillo@solo.io
+
+# Solo specific
+npm install -g corepack && corepack --version
